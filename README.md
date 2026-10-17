@@ -1,6 +1,6 @@
 # ⚡ Anas Wahab
 ### Technical Operator & Founder Force Multiplier | AI Operations, RevOps & Upstream Infrastructure
-**Location:** Mumbai / Pune, India (Open to On-Site Pune)  
+**Location:** Mumbai / Pune / Kolkata, India (Open to On-Site Pune)  
 **Email:** [anas@ainexlifyagencies.com](mailto:anas@ainexlifyagencies.com) • **LinkedIn:** [linkedin.com/in/anaswahab97](https://linkedin.com/in/anaswahab97) • **GitHub:** [github.com/anaswahab231997](https://github.com/anaswahab231997)
 
 ---
