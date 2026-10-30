@@ -1,15 +1,15 @@
 # Anas Wahab
 ### Applied AI Systems & Workflow Automation Builder
-**Location:** Mumbai / Pune, India • **Email:** [anas@ainexlifyagencies.com](mailto:anas@ainexlifyagencies.com) • **LinkedIn:** [linkedin.com/in/anaswahab97](https://linkedin.com/in/anaswahab97) • **GitHub:** [github.com/anaswahab231997](https://github.com/anaswahab231997)
+**Location:** Mumbai / Kolkata, India • **Email:** [anas@ainexlifyagencies.com](mailto:anas@ainexlifyagencies.com) • **LinkedIn:** [linkedin.com/in/anaswahab97](https://linkedin.com/in/anaswahab97) • **GitHub:** [github.com/anaswahab231997](https://github.com/anaswahab231997)
 
 ---
 
 ### 🧭 Overview
-I build fault-tolerant autonomous agent pipelines, deterministic data extraction engines, and high-throughput workflow infrastructure. My focus is engineering production reliability into non-deterministic LLM applications—enforcing strict schema validation, atomic idempotency, and graceful failure handling.
+I build fault-tolerant autonomous agent pipelines, deterministic data extraction engines, and event-driven workflow infrastructure. My focus is engineering production reliability into non-deterministic LLM applications—enforcing strict schema validation, atomic idempotency, and transactional data integrity.
 
-- ⚡ **Upstream Open Source:** Author of upstream security patch in [BerriAI/litellm#42490](https://github.com/BerriAI/litellm/pull/42490) (In-Review: Scoped Anthropic OAuth credentials strictly to `api.anthropic.com` to eliminate multi-provider token leakage).
-- 🛡️ **Zero-Hallucination Systems:** Architecting AST-validated pipelines with dynamic Pydantic enums and mathematical invariant checks.
-- 🔄 **Event-Driven Architecture:** Building asynchronous workers with Redis/PostgreSQL check-and-claim patterns, rate limiting, and dead-letter queues.
+- 🛡️ **Schema-Governed AI Pipelines:** Dynamic Pydantic validation constraining LLM outputs to strict ERP and accounting taxonomies at token generation.
+- ⚡ **Transactional Event Systems:** Asynchronous workers, PostgreSQL `FOR UPDATE SKIP LOCKED`, sub-second webhook orchestration, and idempotency safeguards.
+- 🔒 **Data Integrity & Security:** Entity-level SHA-256 deduplication, AES-256-GCM authenticated credential encryption, and human-in-the-loop audit queues.
 
 ---
 
@@ -18,9 +18,9 @@ I build fault-tolerant autonomous agent pipelines, deterministic data extraction
 | Domain | Technologies & Systems |
 | :--- | :--- |
 | **Languages & Runtimes** | Python (FastAPI, asyncio, Pydantic v2), Node.js / Express, SQL (PostgreSQL) |
-| **AI Infrastructure & Gateways** | LiteLLM Proxy, Google Gemini API (2.5 & 1.5 Flash), Claude API, Structured Outputs |
-| **Data & Storage** | Supabase (PostgreSQL, pgvector, Row-Level Security), Redis, asyncpg |
-| **Workflow & Integration** | n8n (Queue Mode), Webhook Gateways, Twilio Communications, Shopify APIs, REST/GraphQL |
+| **AI Infrastructure & Gateways** | Google Gemini API (`google-genai`), Claude API, Structured Outputs & Constrained Decoding |
+| **Data & Storage** | PostgreSQL (`asyncpg`, transactional queuing via `SKIP LOCKED`), Supabase (Row-Level Security), Redis |
+| **Workflow & Integration** | Webhook Gateways, n8n (Queue Mode), Twilio Communications, REST / WebSockets |
 | **Frontend & Operational UI** | HTMX, Tailwind CSS, Jinja2, Server-Sent Events (SSE) |
 
 ---
@@ -29,19 +29,17 @@ I build fault-tolerant autonomous agent pipelines, deterministic data extraction
 
 #### 1. [The Invisible Accountant](https://github.com/anaswahab231997/invisible-accountant)
 *Autonomous UK financial document extraction & HMRC MTD compliance engine.*
-- **Reliability:** Uses dynamic Pydantic enums strictly constrained to client Chart of Accounts to eliminate category hallucination; verifies mathematical checksums on all line items.
-- **Fault-Tolerance:** Implements `asyncio.Semaphore` concurrency controls, two-phase idempotency locks, and human-in-the-loop escalation queues.
-- `Python` • `FastAPI` • `Gemini API` • `PostgreSQL / asyncpg` • `Pydantic v2` • `pytest`
+- **Schema Enforcement:** Dynamically compiles runtime Pydantic enums constrained directly to the target Chart of Accounts to eliminate category hallucination at token generation.
+- **Transactional Integrity:** Implements PostgreSQL `asyncpg` with `FOR UPDATE SKIP LOCKED` for atomic task dispatching, preventing distributed queue race conditions.
+- **Audit Verification:** Verifies mathematical checksums (`abs((net + tax) - gross) <= 0.01`) across line items and flags discrepancies to a human-in-the-loop review dashboard.
+- `Python 3.11+` • `FastAPI` • `Gemini API` • `PostgreSQL / asyncpg` • `Pydantic v2` • `HTMX`
 
 #### 2. [Speed To Lead™](https://github.com/anaswahab231997/speed-to-lead)
 *Real-time inbound lead qualification engine and webhook dispatcher powering [ainexlifyagencies.com](https://www.ainexlifyagencies.com).*
-- **Velocity & Safety:** Processes and qualifies inbound leads in sub-25 seconds with automated intent scoring, multi-tier LLM failover (Gemini 2.5 Flash $\rightarrow$ 1.5 Flash), and live SSE streaming responses.
+- **Edge Routing:** Ingests webhooks with immediate sub-100ms HTTP acknowledgment while continuing asynchronous downstream LLM qualification.
+- **Resilient AI Gateway:** Implements multi-tier model failover (cascading from primary to fallback models) to handle upstream HTTP 429 / 503 rate limits gracefully.
+- **Real-Time Delivery:** Streams live interaction tokens to client interfaces via Server-Sent Events (SSE).
 - `Node.js` • `Express 5.x` • `Gemini API` • `Supabase / PostgreSQL` • `Twilio` • `SSE`
-
-#### 3. [LiteLLM Upstream Security](https://github.com/anaswahab231997/litellm)
-*Upstream enterprise security patch for the LiteLLM AI Gateway.*
-- **Security Fix:** [PR #42490](https://github.com/BerriAI/litellm/pull/42490) — Scoped Anthropic OAuth credentials strictly to `api.anthropic.com`, eliminating multi-provider token leakage across proxy endpoints.
-- `Python` • `LiteLLM` • `OAuth & Security` • `AI Gateway`
 
 ---
 
